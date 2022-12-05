@@ -1,7 +1,9 @@
+import timeit
+
 with open('input.txt') as f:
     data = f.read().splitlines()
 
-data = [[[int(k) for k in j.replace('-',',').split(',')] for j in i.split(',')] for i in data]
+data = [[[int(num) for num in elf.replace('-',',').split(',')] for elf in pair.split(',')] for pair in data]
 
 part1 = 0
 part2 = 0
@@ -16,3 +18,4 @@ for pair in data:
         part2 += 1
 print(part1)
 print(part2)
+print(timeit.timeit())
